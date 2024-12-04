@@ -1,0 +1,32 @@
+{
+  "name": "vidtube_njs",
+  "version": "1.0.0",
+  "description": "YouTube clone",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=.env src/index.js",
+    "dev": "nodemon --env-file=.env src/index.js"
+  },
+  "keywords": [
+    "nodeJS",
+    "mongoose",
+    "express",
+    "youtubeClone",
+    "backend"
+  ],
+  "author": "Nuaiman Ashiq",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "prettier": "^3.4.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "logger": "^0.0.1",
+    "mongoose": "^8.8.3",
+    "winston": "^3.17.0"
+  }
+}
