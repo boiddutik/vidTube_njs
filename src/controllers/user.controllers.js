@@ -5,17 +5,16 @@ import { User } from "../models/user.model.js"
 
 
 const registerUser = asyncHandler(async (req, res) => {
-    console.log('Reached register user controller')
     const { userName, fullName, email, password } = req.body;
     if (
         [userName, fullName, email, password].some((field) => field?.trim() === "")
     ) {
         throw new ApiError(400, "All fields are required")
     }
-    const existingUser = await User.findOne({
+    const userAlreadyExists = await User.findOne({
         $or: [{ userName }, { email }]
     })
-    if (existingUser) {
+    if (userAlreadyExists) {
         throw new ApiError(409, "User already exists")
     }
     const avatar = req.files?.avatar[0]?.path;
