@@ -25,6 +25,6 @@ export { app };
 // git commit -m "Removed node_modules from Git tracking"
 // git push
 //
-// git rm -r --cached public/temp/
+// git rm -r --cached public/temp/*
 // git commit -m "Removed public/temp from Git tracking"
 // git push
