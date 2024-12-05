@@ -1,3 +1,3 @@
-export const DB_NAME = "Vid_Tube"
+const DB_NAME = "Vid_Tube"
 
-export default { DB_NAME }
+export { DB_NAME }

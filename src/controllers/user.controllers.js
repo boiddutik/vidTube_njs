@@ -18,10 +18,13 @@ const registerUser = asyncHandler(async (req, res) => {
     if (existingUser) {
         throw new ApiError(409, "User already exists")
     }
-    const avatar = req.files?.avatar?.[0]?.path;
-    const cover = req.files?.cover?.[0]?.path;
+    const avatar = req.files?.avatar[0]?.path;
+    let cover;
+    if (req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length > 0) {
+        cover = req.files.coverImage[0].path
+    }
     if (!avatar) {
-        throw new ApiError(400, "Avatar is missing")
+        throw new ApiError(400, "Avatar file is required")
     }
     const createdUser = await User.create(
         {
