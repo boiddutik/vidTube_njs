@@ -5,6 +5,7 @@ import { User } from "../models/user.model.js"
 
 
 const registerUser = asyncHandler(async (req, res) => {
+    console.log('Reached register user controller')
     const { userName, fullName, email, password } = req.body;
     if (
         [userName, fullName, email, password].some((field) => field?.trim() === "")
